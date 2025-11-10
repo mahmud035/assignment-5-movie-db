@@ -64,13 +64,15 @@ const LanguageSwitcher = () => {
           />
           {selectedLanguage?.language}
         </button>
+
         {showMenu && (
           <div className="absolute right-0 z-10 w-40 p-2 mt-2 text-black bg-white rounded-md shadow-lg top-full">
             {languages.map((entry) => (
-              <div
+              <button
                 key={entry.code}
+                type="button"
                 onClick={() => handleLanguageChange(entry.code)}
-                className="flex items-center gap-2 p-2 rounded-md cursor-pointer hover:bg-gray-100"
+                className="flex items-center w-full gap-2 p-2 text-left bg-transparent border-none rounded-md cursor-pointer hover:bg-gray-100"
               >
                 <Image
                   className="max-w-8"
@@ -80,7 +82,7 @@ const LanguageSwitcher = () => {
                   width={165}
                 />
                 {entry.language}
-              </div>
+              </button>
             ))}
           </div>
         )}
